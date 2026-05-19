@@ -1,0 +1,4 @@
+/.direnv/
+/themes/PaperMod
+/.treefmt.toml
+/.pre-commit-config.yaml
