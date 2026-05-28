@@ -1,0 +1,11 @@
+--- a/lexers/embedded/bash_session.xml
++++ b/lexers/embedded/bash_session.xml
+@@ -10,7 +10,7 @@
+   </config>
+   <rules>
+     <state name="root">
+-      <rule pattern="^((?:\[[^]]+@[^]]+\]\s?)?[#$%&gt;])(\s*)(.*\n?)">
++      <rule pattern="^((?:\[[^]]+@[^]]+\]\s?)?[#$%&gt;]\s?)(\s*)(.*\n?)">
+         <bygroups>
+           <token type="GenericPrompt"/>
+           <token type="Text"/>

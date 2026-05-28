@@ -1,0 +1,13 @@
+:root {
+  text-autospace: normal;
+}
+
+.chroma .gp,
+.chroma .go {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.chroma .hl {
+  background-color: #3c3e45;
+}

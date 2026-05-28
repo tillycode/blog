@@ -1,0 +1,56 @@
+baseURL: https://szp15.com/
+theme: PaperMod
+timeZone: Asia/Shanghai
+defaultContentLanguage: 'zh'
+params:
+  showToc: true
+  myShowCodeCopyButtons: true
+
+languages:
+  zh:
+    locale: 'zh-CN'
+    label: '中文'
+    title: '山楂片的博客'
+    weight: 1
+    menu:
+      main:
+        - name: 关于
+          url: about/
+          weight: 1
+        - name: 归档
+          url: archives/
+          weight: 2
+        - name: 搜索
+          url: search/
+          weight: 3
+        - name: 标签
+          url: tags/
+          weight: 4
+
+markup:
+  goldmark:
+    extensions:
+      cjk:
+        enable: true
+        eastAsianLineBreaks: true
+        escapedSpace: true
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - - $$
+              - $$
+          inline:
+            - - '$'
+              - '$'
+  highlight:
+    lineNos: true
+    lineNumbersInTable: false
+    noClasses: false
+    # see shell.nix for the style
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON

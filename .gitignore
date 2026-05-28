@@ -1,4 +1,12 @@
+# nix-managed files
 /.direnv/
 /themes/PaperMod
 /.treefmt.toml
 /.pre-commit-config.yaml
+/.prettierrc.yaml
+/assets/css/includes/chroma-styles.css
+
+# hugo generated files
+/public/
+/resources/_gen/
+/.hugo_build.lock
