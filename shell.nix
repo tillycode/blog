@@ -18,7 +18,10 @@ let
       hash = "sha256-5g6qI2OxDd//bxIy9nQi9XSDMSgNGk+OLgT2EqIjGRY=";
     };
     patches = [
+      # make code copy button respect user-select CSS
       ./patches/papermod-code-copy-button.patch
+      # enhance search to contain summary
+      ./patches/papermod-search.patch
     ];
     installPhase = ''
       runHook preInstall

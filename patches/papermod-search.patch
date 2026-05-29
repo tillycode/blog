@@ -1,0 +1,44 @@
+--- a/assets/css/common/search.css
++++ b/assets/css/common/search.css
+@@ -27,6 +27,15 @@
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
++    font-size: 80%;
++}
++
++.searchResults section>h2 {
++    line-height: 1.6;
++}
++
++.searchResults section+svg {
++    min-width: 24px;
+ }
+ 
+ .searchResults li:hover,
+diff --git a/assets/js/fastsearch.js b/assets/js/fastsearch.js
+index cb4eabf..53b2674 100644
+--- a/assets/js/fastsearch.js
++++ b/assets/js/fastsearch.js
+@@ -76,7 +76,11 @@ const renderResults = (results) => {
+ 
+     for (const result of results) {
+         const li = document.createElement('li');
+-        const titleText = document.createTextNode(result.item.title);
++        const title = document.createElement("h2");
++        title.innerText = result.item.title;
++        const summary = document.createElement("section");
++        summary.innerHTML = result.item.summary;
++        summary.prepend(title);
+         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+         svg.setAttribute('width', '24');
+         svg.setAttribute('height', '24');
+@@ -95,7 +99,7 @@ const renderResults = (results) => {
+         link.href = result.item.permalink;
+         link.setAttribute('aria-label', result.item.title);
+ 
+-        li.appendChild(titleText);
++        li.appendChild(summary)
+         li.appendChild(svg);
+         li.appendChild(link);
+         fragment.appendChild(li);

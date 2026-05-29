@@ -5,6 +5,11 @@ defaultContentLanguage: 'zh'
 params:
   showToc: true
   showCodeCopyButtons: true
+  fuseOpts:
+    threshold: 0.3
+    minMatchCharLength: 2
+  footer:
+    text: '[京ICP备 17062397号-2](https://beian.miit.gov.cn)'
 
 languages:
   zh:
