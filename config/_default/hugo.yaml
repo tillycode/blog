@@ -4,7 +4,7 @@ timeZone: Asia/Shanghai
 defaultContentLanguage: 'zh'
 params:
   showToc: true
-  myShowCodeCopyButtons: true
+  showCodeCopyButtons: true
 
 languages:
   zh:

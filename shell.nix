@@ -17,6 +17,15 @@ let
       rev = "154d006e0182dfc7da38008323976b02e6bfab4a";
       hash = "sha256-5g6qI2OxDd//bxIy9nQi9XSDMSgNGk+OLgT2EqIjGRY=";
     };
+    patches = [
+      ./patches/papermod-code-copy-button.patch
+    ];
+    installPhase = ''
+      runHook preInstall
+      mkdir -p $out
+      cp -r . $out/
+      runHook postInstall
+    '';
   });
   chroma-css =
     theme:
@@ -130,7 +139,7 @@ pkgs.mkShellNoCC {
     rsync
   ];
   shellHook = ''
-    ln -sfn ${hugo-papermod.src} themes/PaperMod
+    ln -sfn ${hugo-papermod} themes/PaperMod
     ln -sfn ${treefmt-toml} .treefmt.toml
     ln -sfn ${pre-commit-config-yaml} .pre-commit-config.yaml
     ln -sfn ${prettier-config-yaml} .prettierrc.yaml

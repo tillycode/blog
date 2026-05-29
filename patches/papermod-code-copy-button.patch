@@ -1,0 +1,15 @@
+--- a/layouts/_partials/footer.html
++++ b/layouts/_partials/footer.html
+@@ -124,12 +124,6 @@
+         }
+ 
+         copybutton.addEventListener('click', (cb) => {
+-            if ('clipboard' in navigator) {
+-                navigator.clipboard.writeText(codeblock.textContent);
+-                copyingDone();
+-                return;
+-            }
+-
+             const range = document.createRange();
+             range.selectNodeContents(codeblock);
+             const selection = window.getSelection();
