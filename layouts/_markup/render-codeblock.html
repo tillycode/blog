@@ -1,0 +1,10 @@
+{{- $title := or (index .Attributes "title") -}}
+{{- $result := transform.HighlightCodeBlock . -}}
+{{- if $title -}}
+  <figure class="codeblock">
+    <figcaption>{{ $title }}</figcaption>
+    {{ $result.Wrapped }}
+  </figure>
+{{- else -}}
+  {{ $result.Wrapped }}
+{{- end -}}
